@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <title>CS3240 Mobile Prototyping</title>
+
+  <link rel="stylesheet" href="css/chui-ios-3.5.2.css">
+  <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+
+    <!-- main page-->
+    <nav class='current'>
+        <h1>Event Creator</h1>
+        <a class='button' id="goto-new-note">New</a>
+    </nav>
+    
+    <article id="home" class="current">
+        <section>
+            <ul class='list' id="home-note-list">
+                <!-- empty list-->
+            </ul>
+        </section>
+    </article>
+    
+    <!-- view event -->
+    <nav class='next'>
+        <a class='button backTo' id="goto-home">Back</a>
+        <h1>View Event</h1>
+    </nav>
+    
+    <article id="note-view" class="next" data-id="">
+        <section>
+            <ul class='list'>
+                <h2 class='event-title'>SUAD</h2> 
+                <li>
+                    <ul class='list'>
+                        <li class='comp'>
+                            <div>
+                                <h3>Details</h3>
+                                <h4 class='event-details'></h4>
+                            </div>
+                           
+                        </li>
+                        
+                        <li class='comp'>
+                            <div>
+                                <h3>Location</h3>
+                            </div>
+                            <aside>
+                                <h4 class='event-location'>NUS UCC</h4>
+                            </aside>
+                        </li>
+                        
+                        <li class='comp'>
+                            <div>
+                                <h3>Date</h3>
+                            </div>
+                            <aside>
+                                <h4 class='event-day'>12</h4>
+                                <h4>/</h4>
+                                <h4 class='event-month'>10</h4>
+                            </aside>
+                        </li>
+                        
+                        <li class='comp'>
+                            <div>
+                                <h3>Invited People</h3>
+                                
+                            </div>
+                            
+                            
+                        </li> 
+                        <ul class='list' id='people-list'></ul>
+                        
+                        <a id='delete-invite' class='button action'>Delete Event</a>
+                        
+                    </ul>
+                    
+                    
+                </li>
+            </ul>
+            
+            
+        </section>
+    </article>
+    
+    <!-- create new event -->
+    <nav class='next'>
+        <a class='button back'>Back</a>
+        <h1>New Event</h1>
+        <a class='button' id="note-new-save">Save</a>
+    </nav>
+    <article id="note-new" class="next" data-id="">
+        <section>
+            <ul class='list' ui-implements='form'>
+                <li>
+                    <input type="text" id='event-new-title' placeholder="Event name" required>
+                    <br>
+                    <textarea id='event-new-details' placeholder="Details" rows="2" required></textarea>
+                </li>
+            </ul>
+            
+            <ul class='list' ui-implements='form'>
+                <li>
+                    <input type="text" id='event-new-location' placeholder="Location" required>
+                     
+                </li>
+                
+            </ul>
+            
+            <ul class='list'>
+                <li>
+                    <label>Date: <span id='rangeValue1'></span>/<span id='rangeValue2'></span></label>
+                  
+                    <h4>Day</h4>
+                    <input type="range" id="rangeControl1" value="0" min="0" max="31">
+                    
+                    <h4>Month</h4>
+                    <input type="range" id="rangeControl2" value="0" min="0" max="12">
+                </li>
+                
+            </ul>
+            
+            <ul class='list'>
+                <li>
+                    <input type="text" id='event-new-people' placeholder="Name" required>
+                </li>
+            </ul>
+            
+            <a id='send-invite' class='button action'>Invite</a>
+            <p id='invite-response'></p>
+            
+        </section>
+        
+    </article>
+    
+    
+    
+    
+    
+    
+    
+
+
+
+  <script src="js/jquery-2.0.3.js"></script>
+  <script src="js/chui-3.5.2.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
